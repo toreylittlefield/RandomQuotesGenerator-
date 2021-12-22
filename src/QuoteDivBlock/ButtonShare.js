@@ -4,7 +4,7 @@ const ButtonShare = (props) => {
 
     return (
         //[Add the Twitter SVG]
-        <button><a href="https://twitter.com/intent/tweet" target='_blank'>
+        <button><a href="https://twitter.com/intent/tweet" target='_blank' rel='noopener'>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 24 24">
                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 
                 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179
