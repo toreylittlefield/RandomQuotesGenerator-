@@ -53,6 +53,10 @@ button {
   border-radius: 10px;
 }
 
+input {
+  width: 10rem;
+}
+
 
 
 @media screen and  (max-width: 500px) {

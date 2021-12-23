@@ -1,5 +1,6 @@
 import Header from "./Header/Header";
 import QuotesMain from "./QuoteDivBlock/QuotesMain";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 
 
@@ -8,13 +9,17 @@ function App() {
 
 
   return (
-    <div >
+
+    <Router>
       <Header />
 
       <QuotesMain />
 
 
-    </div>
+    </Router>
+
+
+
   );
 }
 

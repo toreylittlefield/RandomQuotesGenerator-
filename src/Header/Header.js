@@ -1,3 +1,4 @@
+import SearchBar from "../SearchBar/SearchBar";
 
 
 const Header = () => {
@@ -9,9 +10,10 @@ const Header = () => {
     // }
 
     return (
+
         <div className="headerDiv">
             <h1>Macs <span style={{ color: 'grey', fontStyle: 'italic' }}>Quote</span>  Generator</h1>
-            <input type='text' placeholder="Search" style={{ fontSize: '1.25rem', borderRadius: '5px' }} />
+            <SearchBar />
         </div>
 
     )

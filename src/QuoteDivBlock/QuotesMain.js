@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 
 import ButtonNext from "./ButtonNext";
-import ButtonShare from "./ButtonShare";
+import ButtonShare from "./ButtonShare.js";
 import Quotes from "./Quotes";
+import TrialButton from "./tweetPost";
+// import TrialButton from "./tweetPost";
+
 
 
 
@@ -51,18 +54,21 @@ const QuotesMain = () => {
 
 
     return (
-        <body className="quotesMain" style={{ backgroundColor: currentBgColor }} id="quote-box">
+        <div className="quotesMain" style={{ backgroundColor: currentBgColor }} id="quote-box">
 
             <div>
                 <Quotes quote={currentQuote} />
             </div>
             <div>
-                <ButtonShare id="tweet-quote" />
+                <ButtonShare id="tweet-quote" shareTweet={currentQuote} />
                 <ButtonNext onClick={fetchQuotes} id="new-quote" />
+                {/* <TrialButton /> */}
+                {/* <TrialButton /> */}
+                <TrialButton />
 
             </div>
 
-        </body>
+        </div>
     )
 }
 
