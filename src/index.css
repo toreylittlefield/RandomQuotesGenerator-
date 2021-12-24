@@ -58,6 +58,36 @@ input {
 }
 
 
+.headerNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  background-color: rgb(233, 152, 45);
+  padding: 10px 20px;
+  list-style: none;
+}
+
+.headerNav li:active {
+  background-color: #ce1a1a;
+  font-weight: bold;
+}
+
+.searchPageMainDiv {
+  display: flex;
+}
+
+.searchPageDiv {
+ background-color: white;
+  width: 50%;
+  margin: 20px auto;
+ 
+  text-align: center;
+  height: 40%;
+  width: 40%;
+  border-radius: 10px;
+}
+
 
 @media screen and  (max-width: 500px) {
   h1 {

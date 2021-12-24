@@ -1,8 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SearchBar = () => {
 
-    const [searchItem, setSearchItem] = useState([])
+    const [searchItem, setSearchItem] = useState('')
+
+    const asyncFunction = async () => {
+        try {
+            const response = await fetch(`https://api.quotable.io/search/quotes?query=${searchItem}&fields=content`)
+
+
+
+            if (response.ok) {
+                const json = await response.json();
+                console.log(json)
+            }
+
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+
+    useEffect(() => {
+
+        asyncFunction()
+
+
+
+    }, [])
 
 
 
@@ -14,7 +39,12 @@ const SearchBar = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        asyncFunction();
+
         console.log(searchItem)
+
+
+        // setSearchItem('')
 
 
     }

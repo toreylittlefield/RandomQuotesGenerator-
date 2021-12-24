@@ -1,6 +1,7 @@
 import Header from "./Header/Header";
 import QuotesMain from "./QuoteDivBlock/QuotesMain";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import SearchPage from "./SearchPage/SearchPage";
 
 
 
@@ -12,8 +13,23 @@ function App() {
 
     <Router>
       <Header />
+      <ul className="headerNav">
+        <li><NavLink to='/'>HomePage</NavLink></li>
+        <li><NavLink to='/Search'>Search Page</NavLink></li>
+      </ul>
 
-      <QuotesMain />
+      <Switch>
+        <Route path='/Search'>
+          <SearchPage />
+        </Route>
+        <Route path='/'>
+          <QuotesMain />
+
+        </Route>
+
+
+      </Switch>
+
 
 
     </Router>
