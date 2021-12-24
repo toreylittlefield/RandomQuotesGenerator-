@@ -60,11 +60,11 @@ const QuotesMain = () => {
                 <Quotes quote={currentQuote} />
             </div>
             <div>
-                <ButtonShare id="tweet-quote" shareTweet={currentQuote} />
+                {/* <ButtonShare id="tweet-quote" shareTweet={currentQuote} /> */}
                 <ButtonNext onClick={fetchQuotes} id="new-quote" />
                 {/* <TrialButton /> */}
                 {/* <TrialButton /> */}
-                <TrialButton />
+                {/* <TrialButton /> */}
 
             </div>
 
