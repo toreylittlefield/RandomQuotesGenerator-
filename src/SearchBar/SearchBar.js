@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 
     const [searchItem, setSearchItem] = useState('')
 
@@ -12,7 +12,10 @@ const SearchBar = () => {
 
             if (response.ok) {
                 const json = await response.json();
-                console.log(json)
+
+                props.setSelectItem(json.results)
+                console.log(json.results)
+                console.log(typeof json.results)
             }
 
         } catch (e) {
@@ -41,7 +44,7 @@ const SearchBar = () => {
 
         asyncFunction();
 
-        console.log(searchItem)
+
 
 
         // setSearchItem('')

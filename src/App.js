@@ -14,8 +14,8 @@ function App() {
     <Router>
       <Header />
       <ul className="headerNav">
-        <li><NavLink to='/'>HomePage</NavLink></li>
-        <li><NavLink to='/Search'>Search Page</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/Search'>Search Quotes</NavLink></li>
       </ul>
 
       <Switch>
