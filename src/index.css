@@ -74,7 +74,8 @@ input {
 }
 
 .searchPageMainDiv {
-  display: flex;
+  display: block;
+  
 }
 
 .searchPageDiv {
@@ -84,17 +85,47 @@ input {
  
   text-align: center;
   height: 40%;
-  width: 40%;
+  width: 80vw;
   border-radius: 10px;
 }
 
+form {
+     margin: 5px auto;
+     font-size: 12px;
+     text-align: center;
+  }
 
-@media screen and  (max-width: 500px) {
-  h1 {
-    font-size: 12px;
+
+@media  (max-width: 700px) {
+  /* h1 {
+    font-size: 16px;
   }
 
   p{
-    font-size: 12px;
+    font-size: 16px;
   }
+
+  .searchPageMainDiv p {
+    display: block;
+    background-color: rebeccapurple;
+  }
+
+  .searchPageDiv {
+    margin: 0 auto;
+  } */
+
+  body{
+    font-size: 14px;
+  }
+
+  body  .searchPageMainDiv  {
+   
+  
+  }
+
+  
+
+
+
+
 }
