@@ -4,6 +4,7 @@ const SearchBar = (props) => {
 
     const [searchItem, setSearchItem] = useState('')
 
+
     const asyncFunction = async () => {
         try {
             const response = await fetch(`https://api.quotable.io/search/quotes?query=${searchItem}&fields=content`)
@@ -13,9 +14,23 @@ const SearchBar = (props) => {
             if (response.ok) {
                 const json = await response.json();
 
-                props.setSelectItem(json.results)
-                console.log(json.results)
-                console.log(typeof json.results)
+                if (json.results.length === 0) {
+                    props.setLoaded(false);
+                    setSearchItem('')
+
+
+                    return <h1>Not loaded mate</h1>;
+                } else {
+                    props.setSelectItem(json.results)
+                    props.setLoaded(true)
+                    setSearchItem('')
+                    console.log(json)
+                    console.log(typeof json.results)
+                }
+
+
+            } else {
+                throw new Error('This is an invalid request')
             }
 
         } catch (e) {
