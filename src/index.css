@@ -118,8 +118,10 @@ form {
     font-size: 14px;
   }
 
-  body  .searchPageMainDiv  {
-   
+  body  .quotesMain  {
+   font-size: 12px;
+   height: 40%;
+  width: 80vw;
   
   }
 
