@@ -12,12 +12,12 @@ const SearchPageDisplay = (props) => {
                 {props.loaded ?
 
                     Object.keys(props.selectItem).map(index => (
-                        <div key={index}>  {
+                        <ul key={index}>  {
 
-                            <p>
+                            <li>
                                 {props.selectItem[index].content}
-                            </p>
-                        } </div>
+                            </li>
+                        } </ul>
                     ))
 
                     : <h2>No Search result, Please type a valid search message</h2>}
