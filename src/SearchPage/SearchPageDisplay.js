@@ -20,7 +20,7 @@ const SearchPageDisplay = (props) => {
                         } </div>
                     ))
 
-                    : <h2>No Search Message, Please type a valid keyword</h2>}
+                    : <h2>No Search result, Please type a valid search message</h2>}
 
             </div>
 

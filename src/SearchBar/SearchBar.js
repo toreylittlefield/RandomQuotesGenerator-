@@ -16,10 +16,10 @@ const SearchBar = (props) => {
 
                 if (json.results.length === 0) {
                     props.setLoaded(false);
-                    setSearchItem('')
+                    setSearchItem('');
 
 
-                    return <h1>Not loaded mate</h1>;
+
                 } else {
                     props.setSelectItem(json.results)
                     props.setLoaded(true)
