@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 exports.handler = async (event, context) => {
   try {
     const CLIENT_ID = process.env.REACT_APP_TWITTER_CLIENT_ID;
