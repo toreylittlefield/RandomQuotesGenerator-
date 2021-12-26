@@ -1,4 +1,4 @@
-import SearchBar from "../SearchBar/SearchBar";
+
 
 
 const Header = () => {
@@ -10,11 +10,14 @@ const Header = () => {
     // }
 
     return (
+        <nav>
+            <div className="headerDiv">
+                <h1>Macs <span style={{ color: 'grey', fontStyle: 'italic' }}>Quote</span>  Generator</h1>
 
-        <div className="headerDiv">
-            <h1>Macs <span style={{ color: 'grey', fontStyle: 'italic' }}>Quote</span>  Generator</h1>
-            <SearchBar />
-        </div>
+            </div>
+
+        </nav>
+
 
     )
 }
