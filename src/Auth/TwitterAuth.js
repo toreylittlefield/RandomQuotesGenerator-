@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-const UserContext = createContext({ auth: false, name: '', token: '', expires: '' });
+export const UserContext = createContext({ auth: false, name: '', token: '', expires: '' });
 
 const TwitterAuthProvider = ({ children }) => {
   // User is the name of the "data" that gets stored in context
