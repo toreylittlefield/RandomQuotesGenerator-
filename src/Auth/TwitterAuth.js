@@ -1,6 +1,15 @@
 import React, { createContext, useState } from 'react';
 
-export const UserContext = createContext({ auth: false, name: '', token: '', expires: '' });
+export const UserContext = createContext({
+  user: {
+    auth: false,
+    name: '',
+    token: '',
+    expires: '',
+  },
+  login: ({ name = '', token = '', expires = '' }) => {},
+  logout: () => {},
+});
 
 const TwitterAuthProvider = ({ children }) => {
   // User is the name of the "data" that gets stored in context
@@ -8,6 +17,7 @@ const TwitterAuthProvider = ({ children }) => {
 
   // Login updates the user data with a name parameter
   const login = ({ name = '', token = '', expires = '' }) => {
+    console.log({ name, token, expires, user });
     setUser((_) => ({
       expires,
       token,
@@ -17,7 +27,7 @@ const TwitterAuthProvider = ({ children }) => {
   };
 
   // Logout updates the user data to default
-  const logut = ({ name = '', token = '', expires = '' }) => {
+  const logout = ({ name = '', token = '', expires = '' }) => {
     setUser((_) => ({
       expires,
       token,
@@ -26,7 +36,7 @@ const TwitterAuthProvider = ({ children }) => {
     }));
   };
 
-  return <UserContext.Provider value={{ user, login, logut }}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={{ user, login, logout }}>{children}</UserContext.Provider>;
 };
 
 export default TwitterAuthProvider;
