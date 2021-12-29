@@ -1,5 +1,4 @@
 const fetch = require('node-fetch').default;
-// import fetch from 'node-fetch';
 
 const getAuthToken = async ({ codeVerifier, clientId, redirectURI, grantType }, codeFromOAuth) => {
   try {
