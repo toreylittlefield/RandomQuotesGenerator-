@@ -27,6 +27,7 @@ const getAuthToken = async ({ codeVerifier, clientId, redirectURI, grantType }, 
     if (twitterRes.ok) {
       return await twitterRes.json();
     } else {
+      // TODO needs better error handling
       const json = await twitterRes.json();
       console.log({ json }, 'Bad Request');
       throw Error(json);
