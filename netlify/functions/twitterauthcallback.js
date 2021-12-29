@@ -1,6 +1,5 @@
-import { config, sourceURL, authTokens } from './utils/auth-config';
+import { config, sourceURL } from './utils/auth-config';
 import { getAuthToken } from './utils/get-auth-token';
-import fetch from 'node-fetch';
 
 exports.handler = async (event, context) => {
   try {
@@ -16,20 +15,17 @@ exports.handler = async (event, context) => {
     // add code from twitter & exchange for access token
     const tokenRes = await getAuthToken(config, code);
 
-    //
+    // something went wrong
+    if (!tokenRes.access_token) throw Error(tokenRes);
     console.table(tokenRes);
-    authTokens.accessToken = tokenRes.access_token;
-    console.table(authTokens);
-    const getTweets = await fetch(`${sourceURL}/.netlify/functions/twitter_read_tweets`, {
-      method: 'POST',
-      body: JSON.stringify(authTokens),
-    });
-    const jsonData = await getTweets.json();
-    console.log(jsonData);
+    // return token to client in url
     return {
       statusCode: 302,
       headers: {
-        Location: `${sourceURL}/?${JSON.stringify(tokenRes)}`,
+        Location: `${sourceURL}/#expires_in=${tokenRes.expires_in}&token=${Buffer.from(
+          tokenRes.access_token,
+          'binary'
+        ).toString('base64')}`,
       },
       'Cache-Control': 'no-cache',
       body: null,
