@@ -11,7 +11,6 @@ exports.handler = async (event, context) => {
       },
     });
     const json = await res.json();
-    console.log('read user data', { json, access_token });
     return {
       statusCode: 200,
       body: JSON.stringify(json),
