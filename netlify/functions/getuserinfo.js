@@ -2,10 +2,9 @@ import fetch from 'node-fetch';
 
 exports.handler = async (event, context) => {
   try {
-    const access_token = JSON.parse(event.body)['access_token'];
-    console.log({ access_token, body: event.body });
-    // const url = `https://api.twitter.com/2/tweets?ids=1261326399320715264`;
-    const url = `https://api.twitter.com/2/users/by/username/toreylittlefiel`;
+    const access_token = JSON.parse(event.body).token;
+    const userFields = `user.fields=profile_image_url`;
+    const url = `https://api.twitter.com/2/users/me?${userFields}`;
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${access_token}`,
