@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchPageDisplay from './SearchPageDisplay';
-import { useMediaQuery } from 'react-responsive';
+// import { useMediaQuery } from 'react-responsive';
 
 const SearchPage = () => {
   const [selectItem, setSelectItem] = useState({});
   const [loaded, setLoaded] = useState(false);
 
-  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 700px)' });
+  // const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+  // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 700px)' });
 
-  const styles = {
-    color: 'green',
-  };
-  console.log(selectItem);
+  // const styles = {
+  //   color: 'green',
+  // };
 
   return (
     <div className="searchPageMainDiv">
