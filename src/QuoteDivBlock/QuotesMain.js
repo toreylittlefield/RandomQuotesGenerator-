@@ -18,23 +18,20 @@ const QuotesMain = () => {
     setCurrentBgColor(bgColor);
   }
 
-  const fetchQuotes = useCallback(
-    () => async () => {
-      try {
-        const response = await fetch('https://api.quotable.io/random');
-        if (response.ok) {
-          const jsonResponse = await response.json();
-          randomGenerator();
-          setCurrentQuote(jsonResponse);
-          return jsonResponse;
-        }
-        throw new Error('Error');
-      } catch (e) {
-        console.log(e);
+  const fetchQuotes = useCallback(async () => {
+    try {
+      const response = await fetch('https://api.quotable.io/random');
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        randomGenerator();
+        setCurrentQuote(jsonResponse);
+        return jsonResponse;
       }
-    },
-    []
-  );
+      throw new Error('Error');
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
 
   useEffect(() => {
     fetchQuotes();
