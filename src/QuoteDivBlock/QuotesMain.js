@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from 'react';
 import ButtonNext from './ButtonNext';
 import ButtonShare from './ButtonShare.js';
 import Quotes from './Quotes';
-// import TrialButton from "./tweetPost";
+import TrialButton from './tweetPost';
 // import TrialButton from "./tweetPost";
 
 const QuotesMain = () => {
@@ -45,7 +45,7 @@ const QuotesMain = () => {
       <div>
         <ButtonShare id="tweet-quote" shareTweet={currentQuote} />
         <ButtonNext onClick={fetchQuotes} id="new-quote" />
-        {/* <TrialButton /> */}
+        <TrialButton currentQuote={currentQuote} />
         {/* <TrialButton /> */}
         {/* <TrialButton /> */}
       </div>
